@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-css">
     <div>
       <h2>A propos de moi</h2>
       <!-- <div class="me"> -->
@@ -20,42 +20,70 @@
       </article>
       <br />
       <h2>Langages :</h2>
-      <article>
-        <img src="../../assets/img/html5.png" alt="" />
-        <img src="../../assets/img/css.png" alt="" />
-        <img src="../../assets/img/js.png" alt="" />
-        <img src="../../assets/img/php.png" alt="" />
-        <img src="../../assets/img/mysql.png" alt="" />
-      </article>
+      <div class="display-langages">
+        <article v-bind:key="index" v-for="(langage, index) in iconLangage">
+          <img class="icons" :src="langage.srcIco" :alt="langage.title" />
+        </article>
+      </div>
       <br />
       <h2>Framework:</h2>
-      <article>
-        <img src="../../assets/img/symfony.png" alt="" />
-        <img src="../../assets/img/ionic.png" alt="" />
-      </article>
+      <div class="display-langages">
+        <article :key="index" v-for="(framework, index) in iconFramework">
+          <img
+            class="icons"
+            :src="framework.srcIco"
+            v-bind:alt="framework.title"
+          />
+        </article>
+      </div>
       <br />
       <h2>CMS :</h2>
-      <article>
-        <img src="../../assets/img/wordpress.png" alt="" />
-      </article>
+      <div class="display-langages">
+        <article :key="index" v-for="(cms, index) in iconCms">
+          <img class="icons" :src="cms.srcIco" :alt="cms.title" />
+        </article>
+      </div>
     </div>
 
-    <!-- <div class="div-cv">
-      <a
-        href="./assets/cv/CV_Franck_ROUSSEAU.pdf"
-        target="_blank"
-        class="btn-css"
+    <div class="div-cv">
+      <a href="/cv/CV_Rousseau_Franck.pdf" target="_blank" class="btn-css"
         >Télécharger mon CV</a
       >
-    </div> -->
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "About",
+  data() {
+    return {
+      iconLangage: [
+        { title: "HTML5", srcIco: "/img/html5.png" },
+        { title: "CSS3", srcIco: "/img/css.png" },
+        { title: "JavaScript", srcIco: "/img/js.png" },
+        { title: "PHP", srcIco: "/img/php.png" },
+        { title: "MySQL", srcIco: "/img/mysql.png" },
+      ],
+      iconFramework: [
+        { title: "Symfony", srcIco: "/img/symfony.png" },
+        { title: "Ionic", srcIco: "/img/ionic.png" },
+        { title: "Vue.js", srcIco: "/img/icon-vuejs.png" },
+      ],
+      iconCms: [{ title: "WordPress", srcIco: "/img/wordpress.png" }],
+    };
+  },
 };
 </script>
 
 <style>
+.icons {
+  width: 96px;
+  height: 96px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.display-langages {
+  display: flex;
+}
 </style>

@@ -13,17 +13,21 @@
         <h2>Retrouver moi sur les Réseaux :</h2>
         <div class="picto">
           <a href="https://www.linkedin.com/in/franck-rousseau-ab34571b8/"
-            ><img src="../../assets/img/icon-linkedin.png" alt="icon LinkedIn"
+            ><img src="/img/icon-linkedin.png" alt="icon LinkedIn"
           /></a>
           <a href="https://github.com/Heliossie"
-            ><img src="../../assets/img/icon-github.png" alt="icon GitHub"
+            ><img src="/img/icon-github.png" alt="icon GitHub"
           /></a>
         </div>
       </div>
     </section>
     <br />
     <section class="container-css">
-      <i>Copyright © Franck ROUSSEAU, all rights reserved.</i>
+      <i
+        >Copyright © Franck ROUSSEAU, all rights reserved.
+        <br />
+        Product with Vue.js
+      </i>
     </section>
   </div>
 </template>

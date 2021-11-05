@@ -1,10 +1,23 @@
 <template>
   <div>
     <h1>Portfolio</h1>
-    <section class="container-css" id="portfolio">
+    <div
+      class="portfolio-it"
+      :key="index"
+      v-for="(project, index) in allProject"
+    >
+      <h2>
+        {{ project.title }}
+      </h2>
+      <img
+        class="img-project"
+        v-bind:src="project.srcImg"
+        :alt="project.title"
+      />
+    </div>
+    <!-- <section class="container-css" id="portfolio">
       <h2>Portfolio</h2>
       <div class="projet">
-        <!-- Projet1 -->
         <article>
           <div class="portfolio-it">
             <div class="portfolio-it-pic">
@@ -23,7 +36,6 @@
             </span>
           </div>
         </article>
-        <!-- Projet2 -->
         <article>
           <div class="portfolio-it">
             <div class="portfolio-it-pic">
@@ -39,7 +51,6 @@
             </span>
           </div>
         </article>
-        <!-- Projet3 -->
         <article>
           <div class="portfolio-it">
             <div class="portfolio-it-pic">
@@ -59,15 +70,28 @@
           </div>
         </article>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
 <script>
 export default {
   name: "Portfolio",
+  data() {
+    return {
+      allProject: [
+        { title: "Park-it", srcImg: "/img/project/park-it.png" },
+        { title: "Module Dolibarr", srcImg: "/img/project/dolibarr.png" },
+        { title: "Module Dolibarr", srcImg: "/img/project/in-my-sauce.png" },
+      ],
+    };
+  },
 };
 </script>
 
 <style>
+.img-project {
+  width: 320px;
+  height: 160px;
+}
 </style>
